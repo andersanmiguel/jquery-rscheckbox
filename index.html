@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Plugin for replace checkboxes with stars (for example) </title>
+    <style>
+
+        span.favorites {
+            background: url(stars.png) 0px 19px;
+            width: 19px;
+            height: 19px;
+            display: inline-block;
+            -webkit-transition: background .5s;
+            -moz-transition: background .5s;
+            -o-transition: background .5s;
+            -ms-transition: background .5s;
+            transition: background .5s;
+        }
+        span.favorites:hover {
+            cursor: pointer; 
+        }
+        span.favorites.selected {
+            background: url(stars.png) 0px 0px;
+            -webkit-transition: background .5s;
+            -moz-transition: background .5s;
+            -o-transition: background .5s;
+            -ms-transition: background .5s;
+            transition: background .5s;
+        }
+
+    </style>
+</head>
+<body>
+
+    <form action="#" method="post">
+
+        <h3>Checkboxes</h3>
+        <p> <input type="checkbox" checked="checked" name="one" value="1"> Favorite </p>
+        <p> <input type="checkbox" name="two" value="1"> Favorite </p>
+        <p> <input type="checkbox" name="three" value="1"> Favorite </p>
+        <p> <input type="checkbox" name="four" value="1"> Favorite </p>
+
+    </form>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="jquery.rs-checkbox.js"></script>
+    <script>
+        $('input[type="checkbox"]').rsCheckbox();
+    </script>
+
+
+</body>
+</html>
