@@ -21,14 +21,14 @@
 
         $(checks + ':checked').next(settings.element).addClass(settings.classHigh);
 
-        checks.on('change', function() {
+        checks.on('click', function() {
             var $this = $(this);
             $this.next(settings.element+'.' + settings.classNorm).toggleClass(settings.classHigh);
         });
 
         $('body').on('click', settings.element + '.' + settings.classNorm, function() {
             var $this = $(this);
-            $this.prev('input', checks).trigger('click');
+            $this.prev('input').trigger('click');
         });
 
         return $(this);
