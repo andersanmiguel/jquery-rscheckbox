@@ -1,37 +1,36 @@
 (function($) {
     $.fn.rsCheckbox = function( options ) {
 
-        var settings = { 
+        return this.each(function() {
+            var settings = { 
                 element : 'span',
                 classNorm : 'favorites',
                 classHigh : 'selected',
                 hideCheck : true
             },
+            insert = '',
             checks = $(this);
-          
-        if( options ) {
-            $.extend( settings, options );
-        }
 
-        if (settings.hideCheck) {
-            checks.hide();
-        }
+            if( options ) {
+                $.extend( settings, options );
+            }
 
-        checks.after('<' + settings.element + ' class="' + settings.classNorm + '" />');
+            if (settings.hideCheck) {
+                checks.hide();
+            }
 
-        $(checks + ':checked').next(settings.element).addClass(settings.classHigh);
+            insert = $('<' + settings.element + ' class="' + settings.classNorm + '" />').insertAfter(checks);
 
-        checks.on('click', function() {
-            var $this = $(this);
-            $this.next(settings.element+'.' + settings.classNorm).toggleClass(settings.classHigh);
+            $(checks + ':checked').next(settings.element).addClass(settings.classHigh);
+
+            checks.on('click', function() {
+                $(this).next(settings.element+'.' + settings.classNorm).toggleClass(settings.classHigh);
+            });
+
+            $(insert).on('click', function() {
+                $(this).prev().trigger('click');
+            });
         });
-
-        $('body').on('click', settings.element + '.' + settings.classNorm, function() {
-            var $this = $(this);
-            $this.prev('input').trigger('click');
-        });
-
-        return $(this);
 
     }
 
