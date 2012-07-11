@@ -2,6 +2,8 @@
 
 Replace checkboxes with stars (or any image)
 
+[Demo](http://andersanmiguel.github.com/rs-checkbox)
+
 ## How it works
 
 Load jquery, load the plugin and call it, **r**eally **s**imple
