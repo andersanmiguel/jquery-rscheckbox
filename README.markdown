@@ -2,7 +2,7 @@
 
 Replace checkboxes with stars (or any image)
 
-[Demo](http://andersanmiguel.github.com/rs-checkbox)
+[Demo](http://andersanmiguel.github.com/jquery-rscheckbox)
 
 ## How it works
 
