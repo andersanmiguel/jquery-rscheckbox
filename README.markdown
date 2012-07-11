@@ -1,4 +1,4 @@
-# rs-checkbox plugin
+# jQuery rsCheckbox plugin
 
 Replace checkboxes with stars (or any image)
 
