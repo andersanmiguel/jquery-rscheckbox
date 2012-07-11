@@ -11,6 +11,35 @@
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+    <style>
+        p.demo {
+            font-size: 19px;
+        }
+        span.favorites {
+            background: url(images/stars.png) 0px 19px;
+            width: 19px;
+            height: 19px;
+            margin-right: 5px;
+            display: inline-block;
+            vertical-align: baseline;
+            -webkit-transition: background .5s;
+            -moz-transition: background .5s;
+            -o-transition: background .5s;
+            -ms-transition: background .5s;
+            transition: background .5s;
+        }
+        span.favorites:hover {
+            cursor: pointer;
+        }
+        span.favorites.selected {
+            background: url(images/stars.png) 0px 0px;
+            -webkit-transition: background .5s;
+            -moz-transition: background .5s;
+            -o-transition: background .5s;
+            -ms-transition: background .5s;
+            transition: background .5s;
+        }
+    </style>
   </head>
   <body>
     <div class="wrapper">
@@ -32,6 +61,17 @@
 
 <p>Replace checkboxes with stars (or any image)</p>
 
+<h2>Demo</h2>
+
+<h4>Hide checkbox:</h4>
+<p class="demo hide">
+    <input type="checkbox" name="favorite" value="favorite" id="hide" /><label for="hide">Favorite</label>
+    <input type="checkbox" name="favorite" value="favorite" id="hide2" /><label for="hide2">Favorite</label>
+</p>
+
+<h4>Show checkbox:</h4>
+<p class="demo show"><input type="checkbox" name="favorite" value="favorite" id="show" /><label for="show">Favorite</label></p>
+
 <h2>How it works</h2>
 
 <p>Load jquery, load the plugin and call it, <strong>r</strong>eally <strong>s</strong>imple</p>
@@ -43,7 +83,7 @@ $('input[type="checkbox"]').rsCheckbox();
 &lt;/script&gt;
 </code></pre>
 
-<h3>Options</h3>
+<h3>Options (default)</h3>
 
 <pre><code>{
     element : 'span', // Element to insert
@@ -59,6 +99,14 @@ $('input[type="checkbox"]').rsCheckbox();
       </footer>
     </div>
     <script src="javascripts/scale.fix.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="javascripts/jquery.rs-checkbox.js"></script>
+    <script>
+    $(function() {
+        $('p.hide input[type="checkbox"]').rsCheckbox();
+        $('p.show input[type="checkbox"]').rsCheckbox( { hideCheck : false } );
+    });
+    </script>
     
   </body>
 </html>
